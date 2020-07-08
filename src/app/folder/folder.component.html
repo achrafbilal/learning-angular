@@ -1,0 +1,51 @@
+<div class="card bg-white mb-3 shadow folder-card" style="max-width: 9.50rem; min-width: 9.50rem;"
+    (click)="toggleVisibility()">
+
+    <div class="card-body p-1" (mouseover)="hover=true" (mouseout)="hover=false">
+        <div class="m-auto">
+            <!-- div *ngIf="mode==undefined; then optionsBlock else selectBlock">  -->
+        </div>
+        <div class="btn-group options-menu">
+            <ng-content select="[contextmenu]"></ng-content>
+        </div>
+        <div (click)="open()" class="ffolder medium yellow p-1">
+            <!--i *ngIf="isFav" class="fa fa-star" aria-hidden="true"></i>
+            <ng-container *ngIf="mode!='links'&&  mode!='clink' && mode!='linkFolders'">
+                <i *ngIf="mode && theCheckbox" id="selected" class="fas fa-check" style="color :#2ecc71"></i>
+                <i *ngIf="mode && hover" class="fas fa-check" style="color :#2ecc71"></i>
+                <i *ngIf="this.folder['field1']==1" class="fas fa-check" style="color :#adadad"></i>
+            </ng-container>
+
+            <ng-container *ngIf="mode=='links'  &&  mode!=='clink'">
+                <i *ngIf="hover || checked " id="delete" class="fas fa-unlink" style="color :red"></i>
+            </ng-container>
+            <ng-container *ngIf="mode=='linkFolders' &&  mode!=='clink' ">
+                <i *ngIf="hover || checked " id="delete" class="fas fa-unlink" style="color :red"></i>
+            </ng-container-->
+
+
+        </div>
+    </div>
+
+    <div class="card-footer px-1 py-1 ">
+        <!--div class="d-flex">
+            <div class="mr-auto">
+                <p class="card-text mb-0 pb-0 "><small class="text-muted ">Ref/Numéro</small></p>
+                <p class="card-text pb-0 pt-0 "><small>{{folder.reference }} / {{folder.number}}</small>
+                </p>
+            </div>
+            <div class="d-flex">
+                <div class="mb-auto"> <i class="fa fa-info-circle" aria-hidden="true" container="body"></i> </div>
+            </div>
+            <ng-template #tipContent>
+                <span>Référence: <b>{{this.folder.reference}}</b></span> <br>
+                <span>Numéro: <b>{{this.folder.number}}</b></span> <br>
+                <span>Date: <b>{{this.folder.date | date}}</b></span> <br>
+
+
+
+            </ng-template>
+        </div-->
+
+    </div>
+</div>

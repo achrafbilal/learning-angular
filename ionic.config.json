@@ -1,0 +1,8 @@
+{
+  "name": "V-digitMobil",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

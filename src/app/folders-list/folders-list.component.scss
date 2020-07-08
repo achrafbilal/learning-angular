@@ -1,0 +1,96 @@
+.box {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 12px;
+    display: flex;
+    flex-direction: row;
+   // justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    border: 2px solid #5889e1;
+    padding-left: 7px;
+}.box2 {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 12px;
+    //padding: 10px;
+    display: flex;
+    flex-direction: row;
+    //justify-content: center;
+    align-items: center;
+   // min-height: 40px;
+    border: 2px solid lightgray;
+    border-radius: 26px;
+}
+.box3 {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 12px;
+    //padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 110px;
+    border: 2px solid #5889e1;
+    max-width: 148px;
+}
+.cadre{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(lightgray, #f4f5f8);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    background-color: #F4F5F7!Important;
+    margin-right: 1px;
+}
+.cadre2{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(lightgray, #f4f5f8);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    background-color: #F4F5F7!Important;
+    margin-bottom: 1px;
+}
+.menu-text {
+    font-size: 18px;
+    color: #222b45;
+    //font-weight: bold;
+    text-align: center;
+    overflow-x: hidden;
+    font-family: "Raleway", sans-serif;
+    margin-left: 4px;
+}
+.menu-text2 {
+    font-size: 13px;
+    color: #222b45;
+    font-weight: bold;
+    text-align: center;
+    overflow-x: hidden;
+    font-family: "Nunito";
+    margin-right: 2px;
+}
+.title {
+    font-weight: bold;
+    //color: #222b45;
+    font-family: Nunito;
+    font-size: 24px;
+    
+}
+.h1 {
+    margin: 0;
+    //padding-bottom: 7px;
+    position: relative;
+    border-bottom: 2px solid #007bff;
+  }
+  
+  .h1:before {
+    position: absolute;
+    background:  #ffc107;
+    height: 2px;
+    content: '';
+    width: 70px;
+    bottom: -2px;
+    left: 0;
+  }

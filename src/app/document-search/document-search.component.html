@@ -1,0 +1,338 @@
+
+
+<ion-app>
+  <ion-header translucent="true" class="h1">
+    
+      
+        <!--div style="width: 100%;padding: 20px;padding-bottom: 20px; display: flex;align-items: center;flex-direction: row;margin-left: 30px;   height: 59px;">
+          <ion-icon *ngIf="isResult" (click)="goBack()" style="margin-right: 5px;" name="chevron-back-outline" ></ion-icon>
+          <span class="fa-stack m-0 my-auto" style="margin-bottom: 7px;">
+            <i class="fas fa-file fa-stack-2x"  style="font-size: 2.3em; color: white;"></i>
+            <i class="fa fa-search fa-inverse fa-stack-1x" style="font-size: 1em; margin-top:6px;color: #1c32ad;"></i>
+          </span>
+          <h1 class="title" style="color: white; height: 3px;margin-top: 0; margin-left: 10px; margin-bottom: 19px;text-decoration: none"  >Recherche Document </h1>
+        </div-->
+        <ion-toolbar  style="display: flex;justify-content: center;flex-direction: row;background-color: #F4F5F7!Important">
+     
+          <div style="padding-top: 20px;padding-bottom: 20px; display: flex;align-items: center;flex-direction: row;   height: 59px;justify-content: center; margin-right: 44px;">
+            <div>
+              <ion-icon name="chevron-back" style="color: #192a56;font-size: 25px;     margin-top: 7px;"  *ngIf="detail" (click)="detail = false"></ion-icon>
+
+            <ion-icon name="chevron-back" style="color: #192a56;font-size: 25px;     margin-top: 7px;"  *ngIf="isResult && !detail" (click)="goBack()"></ion-icon>
+            <ion-icon name="chevron-back" style="color:#192a56;font-size: 25px;     margin-top: 7px; "  *ngIf="!isResult && !detail" (click)="goToSearch() "></ion-icon></div>
+            <span class="fa-stack m-0 my-auto" style="margin-bottom: 5px;    margin-left: 35px;">
+              <i class="fas fa-file fa-stack-2x"  style="font-size: 2em; color:#192a56;"></i>
+              <i class="fa fa-search fa-inverse fa-stack-1x" style="font-size: 1em; margin-top:6px;color: white;"></i>
+            </span>
+            <h1 class="title" style="color: #192a56; height: 3px;margin-top: 0; margin-left: 2px; margin-bottom: 19px;     margin-right: 20px;  font-size: 21px;"  >Recherche Avancée </h1>
+          </div>
+      </ion-toolbar>
+   
+    
+  </ion-header>
+<ion-content fullscreen="true" style="--background: url('./assets/icon/bg.jpg')  no-repeat center/cover fixed; overflow:auto;" >
+  <!--div style="display: flex;align-items: center;flex-direction: row;">
+   
+    <div style="width: 100%;padding: 20px;padding-bottom: 0px;" [ngStyle]="isResult ? 'padding-left: 0px' : ''">
+    <h1 class="title" style="display: flex;align-content: center;" >
+      <ion-icon *ngIf="isResult" (click)="goBack()" style="margin-right: 5px;" name="chevron-back-outline" ></ion-icon>
+      <span >Recherche Document </span>
+      
+    </h1>
+  </div>
+
+  </div-->
+  <!-- ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title color="secondary">Recherche Document </ion-card-title>
+          </ion-card-header>
+          <ion-card-content-->
+            
+            
+            <!--Debut-->
+            <!--div class="card-body"-->
+              <div *ngIf="!isResult; then searchBlock else detail && isResult ? Detail : resultBlock"></div>
+              <ng-template #searchBlock>
+                <!--SearchBlock--------------------------------->
+                
+            <div class="container" style="margin-top: 40px;">
+              <form class="ml-5 my-5" [formGroup]="docFormGroup">
+                  <div class="form-group row">
+                    <!--h1 class="text" style="margin-left: 23px" >Type Document : </h1--> 
+                               
+                          <!--ion-list style="width: 80%; margin-left: 39px; height: 30px; margin-bottom: 10px; border: 1px solid  #56bfe4; border-radius: 13px 13px 13px 13px; "> 
+                             <ion-item  style="margin-top: -7px;">                           
+                              <ion-label style="font-size: 14px;font-weight: 550;  font-family: 'Raleway', sans-serif;color: #273c75; ">Types Documents :</ion-label>
+                            <ion-select class="form-control" formControlName="type" id="folder-type" style="font-size: 15px;"
+                            (ionChange)="changeType($event)">
+                              <ion-select-option style="font-size: 15px;" *ngFor="let dt of doctypes" [value]="dt.id">{{dt.name| titlecase}}</ion-select-option>
+                            </ion-select>
+                          </ion-item>
+                        </ion-list-->
+                        <!-- *******************Data list work good**************-->
+                        <!--div class="col-sm-12">
+                          <h1 for="ref " position="floating" 
+                          style="color: #273c75; font-size: 14px;height: 16px;  font-family: 'Raleway', sans-serif; margin-left: 41px; margin-bottom: 3px ;margin-top: 0px;"
+                          >Type document:</h1>
+                          <input  formControlName="type" class="form-control" list="type" type="text"  placeholder="  Choisez un type document"  (change)="changeType($event)" style="width: 80%; margin-left: 39px; height: 30px; margin-bottom: 10px; border: 1px solid  #56bfe4; border-radius: 13px 13px 13px 13px; "  >
+                         
+
+                          <datalist id="type"  >
+                         <optgroup label="Type document" >
+                            <option *ngFor="let dt of doctypes"  [value]="dt.id"  (onChange)="changeType($event)" >{{dt.name| titlecase}}</option>
+                            </optgroup>
+                           
+                    </datalist>
+                        
+                      </div-->
+                             <!-- *******************Data list work good**************-->
+
+                            <ion-list  style="width: 80%; margin-left: 39px; height: 30px; margin-bottom: 10px; border: 1px solid  #56bfe4; border-radius: 13px 13px 13px 13px; ">
+                             <ion-item style="margin-top: -7px; font-size: 14px;">
+                              <ion-label  style="font-size: 14px;font-weight: 550;  font-family: 'Raleway', sans-serif;color: #273c75; ">Types Documents :</ion-label>
+                              <ionic-selectable   style="font-size: 14px;font-weight: 550;  font-family: 'Raleway'" 
+                                item-content 
+                                class="form-control" 
+                                formControlName="type"               
+                                [items]="this.doctypes"
+                                itemValueField="id"
+                                itemTextField="name"
+                                [canSearch]="true"
+                                (onChange)="changeType($event)"
+                                closeButtonSlot="start"
+                                closeButtonText="Annuler">
+                              </ionic-selectable>
+                            </ion-item>
+                          </ion-list>
+
+                             
+                      
+                  </div>
+                  <div formArrayName="attrs">
+                      <div class="form-group row" style="margin-right: 43px;" *ngFor="let a of attrsForms.controls; let i=index" [hidden]="attributes[i].type.name=='fichier'"
+                          [formGroupName]="i">
+                          <h1 for="ref " position="floating" 
+                          style="color: #273c75; font-size: 14px;height: 16px;  font-family: 'Raleway', sans-serif; margin-left: 41px; margin-bottom: 3px ;margin-top: 0px;"
+                          *ngIf="attributes[i].name!='Fichier' " >{{attributes[i].name | titlecase}} :</h1>
+                          <ion-item style=" width: 90%; margin-left: 39px;border: 1px solid #56bfe4;height: 25px;justify-items: center;  margin-bottom: 5px;    border-radius: 13px 13px 13px 13px;"> 
+                            
+                            <div 
+                              *ngIf="attributes[i].type.name!='fichier' && attributes[i].type.name!='longtext' && attributes[i].type.name!='date' ">
+                            <ion-input formControlName="val" [type]="attributes[i].type.name" class="form-control" style="width: 280px; --padding-bottom: 30px; --padding-top: 4px;font-size: smaller;"
+                            id="ref "   ></ion-input>
+                          </div>
+                          
+                          <div 
+                          *ngIf="attributes[i].type.name=='longtext' ">
+                        <ion-textarea formControlName="val"  class="form-control" style="font-size: smaller;--padding-bottom: 30px;--padding-top: 4px;width: 258px;"
+                        id="ref "   required></ion-textarea>
+                      </div>
+                   
+                        <div 
+                          *ngIf="attributes[i].type.name=='date' ">
+                        <ion-datetime style="--padding-bottom: 30px;--padding-top: 4px;font-size: smaller;" ></ion-datetime>
+                      </div>
+                 
+                      
+                        </ion-item>
+
+                      </div>
+                  </div>
+  
+          
+               
+                  <div class="form-group row mx-auto"> 
+                      <div class="col-sm-8 mx-auto d-flex pr-1">
+                                
+                                  <div style="width: 100%;justify-items: center;">
+                                  <ion-row style="display: flex;flex-direction: row;justify-items: center;margin-top: 10px;">
+                                    <ion-col col-6 styles="width: 125px;">
+                                      <ion-button style=" overflow-x: hidden; font-family: 'Nunito'; width: 125px;margin-left: 46px;height: 26px; " color="danger" expand="block"  (click)="clear()"  [disabled]="!docFormGroup.dirty">
+                                       Annuler
+                                      </ion-button>
+                                    </ion-col>
+                                    <ion-col col-6>
+                                       <ion-button style=" overflow-x: hidden; font-family: 'Nunito'; width: 125px;height: 26px;" color="primary" expand="block"  (click)="getResult()">
+                                        Rechercher
+                                      </ion-button>
+                                    </ion-col>
+                                  </ion-row>
+                                
+                                  
+                                    
+                                    
+                                  </div>
+                                 
+                                 
+                      </div>
+                  </div>
+              </form>
+          </div>
+        </ng-template>
+              <!--SearchBlock--------------------------------->
+            
+            <ng-template #resultBlock  >
+
+
+              <ion-slides pager="true" [options]="slideOptsOne" #slideWithNav
+              (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)" (ionSlidePrevEnd)="Loadprev()" (ionSlideNextEnd)="LoadNext()">
+              <ion-slide *ngFor="let p of pages ; let i = index">
+            
+
+              <div  style=" width: 100%;justify-items: center; overflow:auto;">
+                <h6 class="menu-text3"> Résultat de recherche :  <span class="text-muted"><small> {{(this.NBelstock)}} / {{resultTotal}} documents</small></span></h6>
+
+           
+        
+       <div >
+              <!--ion-list lines="none">
+                < Sliding item with text options on both sides>
+                <ion-item-sliding  *ngFor="let dc of this.documentSearch ; let index = index" > 
+                  <ion-item [ngClass]="{'colorlist': 0 == index % 2}" style="height: 33px;" >
+                    <div style="display: flex;align-items: center;flex-direction: row;justify-content: space-between;width: 100%;padding-bottom: 12px;">
+                    
+                    <div style="display: flex;flex-direction: row;">
+                      <ion-icon name="document-text-outline" slot="end" style="font-size: 19px; margin-top: 7px;"></ion-icon>
+                    <ion-label style=" overflow-x: hidden; font-family: 'Nunito';color: #273c75;margin-left: 3px;margin-top: 7px;font-size: 14px; margin-bottom: 2px;">{{dc.attrs[0].val}}</ion-label>
+                     <div style=" width: 26px;color: #f4f5f8;color:#273c75;position: fixed;height: 44px; padding-top: 9px;margin-bottom: 6px;">
+                    
+                    </div>
+                     
+                    </div>
+                    <ion-icon name="information-circle-outline" slot="end" style="font-size: 25px; color:#273c75" (click)="Guide(dc)"></ion-icon>
+                   </div>
+                  </ion-item>
+              
+                  <ion-item-options side="end">
+                    <--ion-icon name="information-circle-outline"></ion-icon/////(click)="btnPlusInfos(dc)"///>
+                    
+                    <ion-item-option slot="end" color="primary" (click)="   btnPlusInfos2(dc) 
+                      "  expandable  >
+                      Détail
+                      
+                    </ion-item-option>
+                  </ion-item-options>
+                </ion-item-sliding>
+
+              <div style="background-color: white; border-top: 1px solid #dee2e6;">
+              <ul style="display: flex;width: 100%;justify-content: center;align-content: center;list-style-type: none;padding: 0; height: 0px; margin-top: 9px;margin-bottom: 21px;">
+                <li class="page-item page-pre"><a class="page-link" aria-label="previous page" style="margin: 5px;"
+                        (click)="goPage(0)">‹‹ </a></li>
+                <li class="page-item" *ngFor="let p of pages; index as i"
+                    [class]="page==i? 'active' : 'not'">
+                    <a style="cursor: pointer;" class="page-link" style="margin: 5px;" (click)="goPage(i)">{{i+1}}
+                    </a>
+                </li>
+
+                <li class="page-item page-next"><a class="page-link" aria-label="next page" style="margin: 5px;"
+                        (click)="goPage(pages.length-1)">››</a></li>
+            </ul>
+                
+          </div>
+        </ion-list-->
+        <div  style="display: flex; flex-direction: column;align-items: center;">
+          <ion-grid>
+            <ion-row style="margin-left: 23px;"> 
+            <ion-col col-3 *ngFor="let dc of this.documentSearch"  style="margin-top: 11px; max-width: 100px; min-width: 130px;margin-right: -10px;margin-left: -12px; padding: 0px; ">
+              <ion-card text-center padding  class="box3" (click)="btnPlusInfos2(dc)" >
+                <div _ngcontent-rvl-c121="" style="display: block ;">
+
+                  <ion-icon name="document-text-outline" slot="end" style="font-size: 25px;margin-top: 10px;"></ion-icon>
+                  </div>
+                <h2 class="menu-text2">{{dc.attrs[0].val}}</h2>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          </ion-grid>
+
+         <!--div style="background-color: #ffffff; border: 1px solid #dee2e6; font-size: 14px;border-radius: 14px;">
+              <ul style="display: flex;width: 100%;justify-content: center;align-content: center;list-style-type: none;padding: 0; height: 0px; margin-top: 9px;margin-bottom: 21px;">
+                <li class="page-item page-pre"><a class="page-link" aria-label="previous page" style="margin: 5px;"
+                        (click)="goPage(0)">‹‹ </a></li>
+                <li class="page-item" *ngFor="let p of pages; index as i"
+                    [class]="page==i? 'active' : 'not'">
+                    <a style="cursor: pointer;" class="page-link" style="margin: 5px;" (click)="goPage(i)">{{i+1}}
+                    </a>
+                </li>
+
+                <li class="page-item page-next"><a class="page-link" aria-label="next page" style="margin: 5px;"
+                        (click)="goPage(pages.length-1)">››</a></li>
+            </ul>
+                
+          </div-->
+        </div>
+        <!--h6 class="menu-text2" style="justify-content: flex-end;margin-left: 135px;position: absolute;bottom: 30px; " > Totale : {{(this.NBelstock)}} / {{resultTotal}}</h6-->
+
+      </div>
+    
+    </div>
+                </ion-slide>
+
+                <ion-slide *ngIf="resultTotal==0">
+                  <div *ngIf="resultTotal==0" class="col-12">
+            
+                    <div style=" display: flex;flex-direction: row;justify-content: center; color:#6c757d!important; margin-top: 30px; margin-bottom: 26px; ">   <span class="fa-stack m-0 my-auto" ><i class="fas fa-file fa-stack-2x" style="font-size: 3em;color:#192a56; "></i></span></div>
+                    <div  style="  color:#6c757d!important;   display: flex;flex-direction: row;justify-content: center;height: 75px;margin-top: 15px;"> Désolé,aucun résultat n'a été trouvé. </div>
+                  
+                </div>
+                  
+                </ion-slide>
+
+              </ion-slides>
+            </ng-template>
+
+<!--fin-->
+    
+        
+     <!--div *ngIf="detail; then Detail "></div-->
+    
+            <ng-template #Detail>
+              
+              <!--div style="--background: url('./assets/icon/bg.jpg')  no-repeat center/cover fixed;" -->
+                <div style="border: 3px solid #dee2e6;    margin-left: 40px; margin-right: 40px;margin-top:88px; " >
+                <h3 style="display: flex;flex-direction: row;justify-content: center;color:#546491;      font-size: 17px; height: 37px;  padding: .75rem 1.25rem;   margin-bottom: 0; background-color:#f7f7f7;" class="h1">  <i class="fa fa-info-circle mr-2 my-auto"  style="color:#546491;    MARGIN-RIGHT: 5px;" aria-hidden="true"></i> Détail </h3>
+              <div style="margin-left: 10px;" >
+                <div style=" display: flex;flex-direction: row;height: 40px;margin-bottom: 5px; " class="trait_dessus">
+                <h6 class="card-subtitle mt-1" style="color: #6c757d!important; font-size: 13px;">Type : </h6><H6 style="color:#273c75 ; margin-left: 6px; font-size: 12px;">   {{this.name}}</H6>
+                
+              </div>
+                <ng-container *ngFor="let attributesvalues of documentInfos.attrs">
+                    <ng-container *ngIf="attributesvalues.id!=6">
+                      <div style=" display: flex;flex-direction: row; height: 25px; ">
+                        <h6 class="card-subtitle mt-1" style="color: #6c757d!important; font-size: 13px;margin:1px">{{attributesvalues.name}} :  </h6><h6 style="color:#273c75 ; margin-left: 6px;max-width: 224px;font-size: 12px;margin:1px"> {{attributesvalues.val}}</h6>
+                        </div>
+                    </ng-container>
+
+                </ng-container>
+              </div>
+            </div>
+                <div style="padding-left: 208px;margin-top: 8px;">
+       
+                  
+                     <ion-button style=" overflow-x: hidden; font-family: 'Nunito';height: 26px; width: 125px;" color="primary" expand="block" (click)="openFile(documentInfos)" >
+                      Visualiser
+                    </ion-button>
+              
+                   
+                </div>
+
+               
+            <!--/div-->
+            </ng-template>
+          <!--/ion-card-content>
+          </ion-card>
+          
+       
+      </ion-col>
+    </ion-row>
+  </ion-grid-->
+     
+  
+</ion-content>
+
+
+</ion-app>

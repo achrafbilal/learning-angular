@@ -1,0 +1,137 @@
+.colorlist{
+    --background:#d3d3d38f;    
+} 
+
+.text{
+    //text-align: 150%;
+    overflow-x: hidden;
+    font-family: 'Nunito';
+    font-size: 20px;
+    color: white;
+    
+}
+.title {
+    font-weight: bold;
+    //color: #222b45;
+    font-family: Nunito;
+    font-size: 24px;
+    
+}
+ion-label{
+    height: 20px;
+}
+
+
+.round {
+    width: 125px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+    --padding-start: 10px;
+    --padding-end: 10px;
+  }
+  .title {
+    font-weight: bold;
+    color: #222b45;
+//    // font-size: 15px;
+//    padding-bottom: 30px;
+//    padding-top: 10px;
+   margin-left: 10px;
+}
+img {
+    max-height: 40px;
+    // position:absolute;
+    // right:10px;
+    // top:10px;
+    // margin-bottom: 15px;
+
+}
+.btn {
+    --border-radius	:26px;
+	border:none;
+	color:#fff;
+	font:bold 12px Verdana;
+    --padding-bottom:'0';
+    --padding-top:'0';
+    width: 10rem;
+
+}
+
+.trait_dessus
+{
+    margin: 0;
+    //padding-bottom: 7px;
+    position: relative;
+    border-bottom: 1px solid #e5e5e5dc;
+    width: 265px;
+}
+hr {
+    border: 2px solid red !important;
+    height: 10px !important;
+    width: 500px !important;
+    background: blue !important;
+    display: block !important;
+    font-size: 2em !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+.h1 {
+    margin: 0;
+    //padding-bottom: 7px;
+    position: relative;
+    border-bottom: 2px solid #007bff;
+  }
+  
+  .h1:before {
+    position: absolute;
+    background:  #ffc107;
+    height: 2px;
+    content: '';
+    width: 70px;
+    bottom: -2px;
+    left: 0;
+  }
+  .box3 {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 12px;
+    //padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90px;
+    border: 1px solid lightgray;
+    max-width: 100px;
+    margin-bottom: 0px;
+    margin-top: 3px;
+}
+.menu-text2 {
+    font-size: 11px;
+    color: #222b45;
+    font-weight: bold;
+    text-align: center;
+   // overflow-x: hidden;
+    font-family: "Nunito";
+    margin-right: 2px;
+    margin-top: 3px;
+    margin-bottom: 0px;
+}
+.menu-text3 {
+    font-size: 16px;
+    color: #222b45;
+    font-weight: 500;
+    text-align: center;
+   // overflow-x: hidden;
+    font-family: "Nunito";
+   // margin-right: 2px;
+    margin-top: 19px;
+    margin-bottom: 0px;
+}
+ion-slides {
+    height: 100%;
+  }
+  ion-slide.swiper-slide {
+    align-items: flex-start;
+}
+input::placeholder {
+    font-size: 11px;
+    }

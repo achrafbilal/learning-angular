@@ -1,0 +1,45 @@
+
+
+<ion-tabs>
+  <div *ngIf= "router.url !== '/login'"> 
+    <div class="f2">
+  <ion-tab-bar slot="bottom" >
+    <ion-tab-button tab="Acceuil" style="background: linear-gradient(#007bfc,#011375);" (click)="goTo2('/Acceuil')"> 
+   <ion-icon name="home" style="color:white;"></ion-icon>
+  </ion-tab-button> 
+
+    <ion-tab-button tab="RechercheAvancee"  style="background: linear-gradient(#007bfc,#011375);" (click)="goTo2('/RechercheAvancee')">
+      <span class="ml-1 mr-3" style="  font-size: 23px; margin-top: 4px;color:white;">               
+        <i class="fas fa-search"></i>
+   </span>
+    </ion-tab-button>
+
+    
+
+    <ion-tab-button tab="Recherche fréquente" style="background: linear-gradient(#007bfc,#011375);" (click)="goTo2('/Rechfreq')">
+      <span class="ml-1 mr-3" style="font-size: 23px; margin-top: 4px;color: white;">
+        <!-- <span class="ml-1 mr-3" style="font-size: 1.3em; color: #364671;"> -->
+      <i class="fas fa-fire-alt"></i>
+</span>
+    
+    </ion-tab-button>
+  
+
+  <ion-tab-button tab="Dossier récent" style="background: linear-gradient(#007bfc,#011375);" (click)="goTo2('/folderslist')">
+    <span class="ml-1 mr-3" style="font-size: 23px; margin-top: 4px;color:white; ">
+      <i class="fas fa-folder" ></i>   </span>
+   
+  </ion-tab-button>
+
+  <ion-tab-button tab="Dossier favoris" style="background: linear-gradient(#007bfc,#011375);" (click)="goTo2('/favfolder')">
+    <span class="ml-1 mr-3" style="font-size: 23px; margin-top: 4px;color:white;">
+
+      <i class="fas fa-star"></i>
+      </span>
+  </ion-tab-button>
+</ion-tab-bar>
+</div>
+</div>
+</ion-tabs>
+
+

@@ -1,0 +1,114 @@
+<ion-app>
+  <ion-header translucent="true"  class="h1">
+    <ion-toolbar  style="display: flex;justify-content: center;flex-direction: row;background-color: #F4F5F7!Important">
+     
+      <div style="padding-top: 20px;padding-bottom: 20px; display: flex;align-items: center;flex-direction: row;   height: 59px;justify-content: center; margin-right: 26px;">
+        <div>
+          <ion-icon name="chevron-back" style="color: #192a56;font-size: 25px;margin-top: 7px;     padding-right: 36px"  (click)="goTo('Acceuil')"  ></ion-icon>
+
+      </div>
+      
+        <span class="ml-1 mr-3" style="font-size: 12px; color: white; margin-bottom: 5px; margin-right: 5px;   margin-left: 35px;">
+
+          <i class="fas fa-star " style="font-size: 2em; color:#f1a402;"></i>
+       </span>
+        <h1 class="title" style="color: #192a56; height: 3px;margin-top: 0; margin-left: 2px; margin-bottom: 19px; margin-right: 65px;  font-size: 21px;"  >Dossier Favoris </h1>
+      </div>
+  </ion-toolbar>
+    
+  </ion-header>
+  <ion-content  fullscreen="true"  style="--background: url('./assets/icon/bg.jpg')  no-repeat center/cover fixed; overflow: auto;"    >
+    <ion-slides pager="true" [options]="slideOptsOne" #slideWithNav
+    (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)" (ionSlidePrevEnd)="Loadprev()" (ionSlideNextEnd)="LoadNext()">
+    <ion-slide *ngFor="let p of pages ; let i = index">
+    <div >
+      <div style="display: flex; flex-direction: row;justify-content: center; margin-top: 8px;  ">
+        <div style="  border: 1px solid lightgray; background-color: #ffff; border-radius: 25px;    width: 210px;"> 
+        <h6 class="menu-text3"  >Dossier(s):<small> {{(this.NBelstock)}}/{{totalfolderFav}}</small> </h6>
+      </div>
+        </div>
+      <!---h6 class="menu-text2" style="margin-top: 8px;"> Total: {{totalfolderFav}} Dossier(s)</h6-->
+        <div  style="display: flex; flex-direction: column;">
+            <ion-grid>
+              <ion-row  style="justify-content: center;">
+              <ion-col col-2 *ngFor="let folder of favoriteFolders"  style="max-width: 170px; min-width: 170px;">
+                <ion-card text-center padding  class="box3" >
+                  <div _ngcontent-rvl-c121="" style="display: flex ;flex-direction: row;justify-content: left;">
+                    <span class="fa-stack m-0 my-auto" style="font-weight: 500;margin-bottom: 10px;">
+                        <i class="fas fa-folder fa-stack-2x" style="font-size: 3em; color:#ffbd00;"></i>
+                        <i  class="fa fa-star fa-inverse fa-stack-1x" style="font-size: 1.2em;margin-top: 9px;margin-left: 4px;color: #f1a402"></i>
+                      </span>
+                    </div>
+                    <h6 style="  margin-top: 4px;margin-bottom: 0px;font-size: 10px;">Réf/Num</h6>
+                  <h2 class="menu-text2">{{folder.id.folder.reference}}/{{folder.id.folder.number}}</h2>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+            </ion-grid>
+         
+            <!-- <app-folder [isFav]="isFavorite(f)" [mode]="operation" [folder]="f" (click)='selectFolder(f)' [isCheked]="checkIfChecked(f)">
+                div class="btn-group options-menu" contextmenu>
+
+                    <a data-toggle="dropdown" aria-haspopup="true " aria-expanded="false " class=" mt-0 ml-0 " style="cursor: pointer; ">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                    <div class="dropdown-menu px-0 ">
+                        <a class="dropdown-item "
+                        (click)="isFavorite(f) ?this.DeleteFavoritefolder(f.id) : addToFavorite(f.id)"><span
+                            style="color: #FDCC0D; "><i
+                                class="fas fa-star"></i></span>
+                       {{isFavorite(folder) ? 'Défavoris' : 'Favoris'}} </a>
+                        <div class="dropdown-divider "></div>
+                        <a class="dropdown-item" (click)="setFolderId(f.id)"> <i class="fas fa-unlink    "></i> Détacher liaison</a>
+                        <a class="dropdown-item" (click)="this.share.editFolder(f)"><i class=" fas fa-edit "></i> Modifier</a>
+                        <a class="dropdown-item " (click)="this.share.deleteFolder(folder)"><span style="color: rgb(228, 66, 37); "><i class="fas fa-trash-alt "></i></span> Supprimer</a>
+
+                    </div>
+                </div>
+            </app-folder>-->
+        </div>
+        <div *ngIf="totalfolderFav==0" class="col-12">
+            <!--app-no-result-founded>
+    fa fa-folder-open
+            </app-no-result-founded-->
+            
+            <div style=" display: flex;flex-direction: row;justify-content: center; color:#6c757d!important; ">   <span class="fa-stack m-0 my-auto" ><i class="fa fa-folder-open fa-stack-2x" style="font-size: 3em; color:#ffbd00;"></i></span></div>
+            <div  style="  color:#6c757d!important;   display: flex;flex-direction: row;justify-content: center;height: 75px;margin-top: 15px;"> Désolé,aucun résultat n'a été trouvé. </div>
+          
+        </div>
+        <!--h6 class="menu-text2" style="justify-content: flex-end; margin-left: 290px; text-align: center;position: absolute; bottom: 33px;" > Totale : {{(this.NBelstock)}} / {{this.totalfolderFav}}</h6-->
+    </div>
+    </ion-slide>
+
+    <ion-slide *ngIf="totalfolderFav==0">
+      <div *ngIf="totalfolderFav==0" class="col-12">
+        
+        <!--app-no-result-founded>
+fa fa-folder-open
+        </app-no-result-founded-->
+        
+        <div style=" display: flex;flex-direction: row;justify-content: center; color:#6c757d!important; margin-top: 30px; ">   <span class="fa-stack m-0 my-auto" ><i class="fa fa-folder-open fa-stack-2x" style="font-size: 3em; color:#ffbd00;"></i></span></div>
+        <div  style="  color:#6c757d!important;   display: flex;flex-direction: row;justify-content: center;height: 75px;margin-top: 15px;"> Désolé,aucun résultat n'a été trouvé. </div>
+      
+    </div>
+      
+    </ion-slide>
+    </ion-slides>
+    <!--div class="mx-auto pagination" *ngIf="pages.length>1">
+      <ul style="display: flex;width: 100%;justify-content: center;align-content: center;list-style-type: none;padding: 0; height: 0px; margin-top: 9px;margin-bottom: 27px;">
+          <li class="page-item page-pre"><a class="page-link"  style="margin: 5px;" aria-label="previous page"
+                  (click)="goPage(0)">‹‹</a></li>
+          <li class="page-item" *ngFor="let p of pages; index as i"
+              [class]="page==i? 'active' : 'not'">
+              <a style="cursor: pointer;" class="page-link"  style="margin: 5px;"(click)="goPage(i)">{{i+1}}
+              </a>
+          </li>
+
+          <li class="page-item page-next"><a class="page-link" style="margin: 5px;" aria-label="next page"
+                  (click)="goPage(pages.length-1)">››</a></li>
+      </ul>
+  </div-->
+
+  </ion-content>
+</ion-app>
+

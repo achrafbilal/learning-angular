@@ -1,0 +1,99 @@
+
+<ion-app>
+    <!-- <ion-header>
+      <ion-toolbar color='primary' style="display: flex;flex-direction: row;justify-content: space-between;" >
+        <ion-title >V-Digit</ion-title>
+        <img  src="//tubetoke.com/wp-content/uploads/2020/02/Logo-VevioSys-Off-1.png"   alt="VevioSys">
+      </ion-toolbar>
+    </ion-header> -->
+    <!-- <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-title size="large">V-Digit</ion-title>
+      </ion-toolbar>
+    </ion-header> -->
+    
+   <!--ion-header translucent="true" >
+      <ion-toolbar style="--background: #4294c6;">
+        <ion-buttons collapse="true" slot="end"style="background-color: white; border-radius: 60px;">
+          <ion-button ><img  src="//tubetoke.com/wp-content/uploads/2020/02/Logo-VevioSys-Off-1.png"   alt="VevioSys" ></ion-button>
+        </ion-buttons>
+        <h2 style="margin-left: 20px; color: white; padding-bottom: 2px; text-decoration: none" class="text">V-Digit</h2>
+      </ion-toolbar>
+      
+    </ion-header-->
+  <ion-content fullscreen="true" style="--background: url('./assets/icon/bg.jpg')  no-repeat center/cover fixed;"  >
+   
+    
+    
+
+    <div style="display: flex;align-items: center;flex-direction: column;height: 100%;padding: 20px;"   >
+      <div class="logo">
+        <img  src="//tubetoke.com/wp-content/uploads/2020/02/Logo-VevioSys-Off-1.png"   alt="VevioSys" >
+        <!--h2 ion-text class="text-primary">
+          <strong>V-digit</strong> 
+        </h2-->
+
+      </div>
+    
+      <div style="width: 110%;justify-items: center;">
+     
+      <!--h3 style="color: white; margin-right: 227px;"  class="text">Mot de passe :</h3>
+      <ion-item style="width: 100%;">
+        <ion-input type="password"  placeholder="Mot de passe" ngModel required  ></ion-input>
+      </ion-item--> 
+      <ion-item style="width: 90%;     font-family: Nunito;">
+        <ion-label position="floating" style="color: #56bfe4;"><ion-icon name="person"></ion-icon>
+          Nom d'utilisateur</ion-label>
+        <ion-input type="text" ngModel required></ion-input>
+      </ion-item>
+      <ion-item style="width: 90%; font-family: Nunito;">
+        <ion-label position="floating" style="color: #56bfe4;"> <ion-icon name="lock-closed"></ion-icon>
+          Mot de passe </ion-label>
+        <ion-input type="password" ngModel required></ion-input>
+      </ion-item>
+
+    </div>
+    <div>
+    <p style="color:#4a4e96;margin-left: 155px; font-family: Nunito;"  ><strong>Forgot Password?</strong></p>
+    </div>
+      
+      <div style="width: 70%; margin-right: 11px; margin-top: -9px;" >
+        <ion-button color="primary"  expand="block" style="--border-radius:20px" [routerLink]="['/Acceuil']"><ion-icon slot="end" name="log-in-outline"></ion-icon>
+          Se Connecter
+        </ion-button>
+        <!--ion-button color="danger" expand="block" >
+          Annuler
+        </ion-button-->
+        
+      </div>
+    
+    </div>
+
+    <!-- <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" offset-md="3">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title color="secondary">Connexion</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <br />
+              <br />
+            </ion-card-content>
+            </ion-card>
+            
+         
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+  
+    
+  </ion-content>
+  <!--ion-footer>
+    <ion-toolbar>
+      <ion-title style="text-align: center;font-size:11px">© 2020 VevioSys</ion-title>
+    </ion-toolbar>
+  </ion-footer-->
+ 
+  </ion-app>
+  

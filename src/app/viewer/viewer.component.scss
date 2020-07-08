@@ -1,0 +1,23 @@
+.title {
+    font-weight: bold;
+    //color: #222b45;
+    font-family: Nunito;
+    font-size: 24px;
+    
+}
+ .f1 {
+    margin: 0;
+    //padding-bottom: 7px
+    position: relative;
+    border-bottom: 2px solid #007bff;
+  }
+  
+  .f1:before {
+    position: absolute;
+    background:  #ffc107;
+    height: 2px;
+    content: '';
+    width: 70px;
+    bottom: -2px;
+    left: 0;
+  }

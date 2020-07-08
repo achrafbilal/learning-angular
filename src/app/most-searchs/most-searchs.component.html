@@ -1,0 +1,86 @@
+<ion-app>
+  <ion-header translucent="true" class="h1" >
+    <ion-toolbar  style="display: flex;justify-content: center;flex-direction: row;background-color: #F4F5F7!Important">
+     
+        <div style="padding-top: 20px;padding-bottom: 20px; display: flex;align-items: center;flex-direction: row;   height: 59px;justify-content: center; margin-right: 44px;">
+          <div>
+          <ion-icon name="chevron-back" style="color:#192a56;font-size: 25px;     margin-top: 7px; padding-right: 30px;" (click)="goTo('/Acceuil')"></ion-icon></div>
+          <ion-icon name="search" style="color: #192a56; font-size: 30Px; margin-top: 5px;"></ion-icon>
+          <h1 class="title" style="color: #192a56; height: 3px;margin-top: 0; margin-left: 2px; margin-bottom: 19px;     margin-right: 20px;  font-size: 21px;"  >Recherche fréquente </h1>
+        </div>
+    </ion-toolbar>
+    
+  </ion-header>
+  <ion-content  fullscreen="true"  style="--background: url('./assets/icon/bg.jpg')  no-repeat center/cover fixed;"  >
+
+    <ion-slides pager="true" [options]="slideOptsOne" #slideWithNav
+    (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)" (ionSlidePrevEnd)="Loadprev()" (ionSlideNextEnd)="LoadNext()">
+    <ion-slide *ngFor="let p of pages ; let i = index" >
+    <div *ngIf="!result" class="h-100" style="max-height: fit-content; overflow: auto;">
+
+
+      <div class="card shadow mb-4 px-0 bg-white">
+       
+          <div style="display: flex; flex-direction: row;justify-content: center; margin-top: 8px;  ">
+            <div style="  border: 1px solid lightgray; background-color: #ffff; border-radius: 25px;    width: 180px;"> 
+            <h6 class="menu-text3"  >Recherche:<small> {{(this.NBelstock)}}/{{countOfSearches}} dossier(s)</small> </h6>
+          </div>
+            </div>
+          
+          <div class="card-body"> 
+  
+              <div class="container-fluid">
+                  <div class="row">
+                      <div class="col-4 mb-3 " *ngFor="let s of this.searchesList">
+                          <app-search-comp (refresh)="refresh($event)" [search]="s" (goResult)="getResult($event)"></app-search-comp>
+  
+                      </div>
+                  </div>
+  
+              </div>
+              <!--div class="d-flex" *ngIf="pages.length>1">
+                <div class="mx-auto pagination">
+                    <ul style="display: flex;width: 100%;justify-content: center;align-content: center;list-style-type: none;padding: 0; height: 0px; margin-top: 9px;margin-bottom: 27px;">
+                        <li class="page-item page-pre"><a class="page-link"  style="margin: 5px;" aria-label="previous page"
+                                (click)="goPage(0)">‹‹</a></li>
+                        <li class="page-item" *ngFor="let p of pages; index as i"
+                            [class]="page==i? 'active' : 'not'">
+                            <a style="cursor: pointer;" class="page-link"  style="margin: 5px;"(click)="goPage(i)">{{i+1}}
+                            </a>
+                        </li>
+      
+                        <li class="page-item page-next"><a class="page-link" style="margin: 5px;" aria-label="next page"
+                                (click)="goPage(pages.length-1)">››</a></li>
+                    </ul>
+                </div>
+            </div-->
+          </div>
+      </div>
+  </div>
+
+</ion-slide>
+
+<ion-slide *ngIf="countOfSearches==0">
+  <div *ngIf="countOfSearches==0" class="col-12">
+
+    <div style=" display: flex;flex-direction: row;justify-content: center; color:#6c757d!important; margin-top: 30px; ">   <span class="fa-stack m-0 my-auto" ><i class="fa fa-folder-open fa-stack-2x" style="font-size: 3em; color:#ffbd00;"></i></span></div>
+    <div  style="  color:#6c757d!important;   display: flex;flex-direction: row;justify-content: center;height: 75px;margin-top: 15px;"> Désolé,aucun résultat n'a été trouvé. </div>
+  
+</div>
+  
+</ion-slide>
+
+</ion-slides>
+
+<!--app-search-result *ngIf="result" [searchId]="currentSearchId" [searchName]="currentSearchName" (back)="goBack()" >
+
+</app-search-result-->
+
+
+
+
+
+
+
+  </ion-content>
+</ion-app>

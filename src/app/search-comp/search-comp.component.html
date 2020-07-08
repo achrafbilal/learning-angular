@@ -1,0 +1,63 @@
+
+
+<div class="container-fluid">
+
+   
+      <div  style="display: flex; flex-direction: column;">
+          <ion-grid style="margin-left: 14px;">
+            <ion-row>
+            <ion-col col-2 >
+              <ion-card text-center padding  class="box3" >
+              
+                  <div _ngcontent-rvl-c121="" class="cadre2">
+                    <span class="fa-stack m-0 my-auto" style="font-weight: 500;margin-top: 4px;">
+                      <i class="fa fa-search fa-stack-2x" style="font-size: 1.7em; color:#ffff;"></i>
+                      </span>
+                    </div>
+                  <h6 style="  margin-top: 4px;margin-bottom: 0px;font-size: 11px;">{{search.name}}</h6>
+                <h2 class="menu-text2"><small>{{search['search_date']}}</small></h2>
+                
+                <ul class="nav  p-0"  style=" list-style-type: none;  padding-left: 10px;">
+                  <div  style="  border: 1px solid lightgray; background-color: #ffff; border-radius: 25px;max-width: 261px;">
+                  <li *ngFor="let ss of search['search']; let i=index" class="nav-item m-1" style="display: inline;">
+                      <span *ngIf="ss.field1!=='' && ss.value!==''" class="badge border border-primary rounded-pill shadow p-1 text-muted"><span style="color: orange; font-weight: 800;">#</span>                           <ng-container *ngIf="(ss.attribute.id===1 ||ss.attribute.id===2) && ss.field1!=''">
+                              {{ss.field1}}
+                          </ng-container>
+
+                          <ng-container *ngIf="(ss.attribute.id!==2 && ss.attribute.id!==1) && ss.value!='²'">
+                              {{ss.value}}
+                          </ng-container>
+                      </span>
+                  </li>
+                  </div>
+              </ul>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          </ion-grid>
+       
+          <!-- <app-folder [isFav]="isFavorite(f)" [mode]="operation" [folder]="f" (click)='selectFolder(f)' [isCheked]="checkIfChecked(f)">
+              div class="btn-group options-menu" contextmenu>
+
+                  <a data-toggle="dropdown" aria-haspopup="true " aria-expanded="false " class=" mt-0 ml-0 " style="cursor: pointer; ">
+                      <i class="fas fa-ellipsis-h"></i>
+                  </a>
+                  <div class="dropdown-menu px-0 ">
+                      <a class="dropdown-item "
+                      (click)="isFavorite(f) ?this.DeleteFavoritefolder(f.id) : addToFavorite(f.id)"><span
+                          style="color: #FDCC0D; "><i
+                              class="fas fa-star"></i></span>
+                     {{isFavorite(folder) ? 'Défavoris' : 'Favoris'}} </a>
+                      <div class="dropdown-divider "></div>
+                      <a class="dropdown-item" (click)="setFolderId(f.id)"> <i class="fas fa-unlink    "></i> Détacher liaison</a>
+                      <a class="dropdown-item" (click)="this.share.editFolder(f)"><i class=" fas fa-edit "></i> Modifier</a>
+                      <a class="dropdown-item " (click)="this.share.deleteFolder(folder)"><span style="color: rgb(228, 66, 37); "><i class="fas fa-trash-alt "></i></span> Supprimer</a>
+
+                  </div>
+              </div>
+          </app-folder>-->
+      </div>
+  
+
+
+</div>

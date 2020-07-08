@@ -1,0 +1,109 @@
+<ion-app>
+  <ion-header translucent="true"  class="h1">
+    <ion-toolbar  style="display: flex;justify-content: center;flex-direction: row; background-color: #F4F5F7!Important;" >
+     
+        <div style="width: 100%;padding: 20px;padding-bottom: 20px; display: flex;align-items: center;flex-direction: row; justify-content: center;  height: 59px;">
+          <ion-icon name="home" style="color: #192a56;"></ion-icon>
+          <h1 class="title" style="color: #192a56; height: 3px;margin-top: 0; margin-left: 10px; margin-bottom: 19px;"  >Acceuil </h1>
+        </div>
+    </ion-toolbar>
+    
+  </ion-header>
+  
+  
+  <ion-content  fullscreen="true"  style="--background: url('./assets/icon/bg.jpg')  no-repeat center/cover fixed;"  >
+    <div  style="display: flex;align-items: center;flex-direction: row;justify-content: center; margin-Top: 20px;">
+      <ion-icon name="person" style="color: #064ebe;" ></ion-icon>
+    </div>
+    <ion-text style="text-align: center;overflow-x: hidden; font-family: 'Nunito';">
+    <h1>Bonjour Monsieur</h1></ion-text>
+    
+    <div  style="display: flex;align-items: center;flex-direction: column;height: 100%;">
+      <!--div style="width: 100%;padding: 20px;padding-bottom: 0px; display: flex;align-items: center;flex-direction: column;">
+        <ion-icon name="home" style="color: white;"></ion-icon>
+        <h1 class="title" style="color: white; height: 3px;margin-top: 0; margin-bottom: 19px;text-decoration: none"  >Acceuil </h1>
+      </div-->
+      <ion-grid style="width:100%">
+        <ion-row>
+          <ion-col col-6>
+            <ion-card text-center padding class="box"    (click)="goTo('/folderslist')">
+              <!--ion-icon name="folder" style=" color:#ebc728;"></ion-icon-->
+              <div _ngcontent-rvl-c121="" class="cadre">
+              <span class="ml-1 mr-3" style="font-size: 2.5em;color:  #ffbd00; ">
+                <i class="fas fa-folder" ></i>   </span>
+               </div>
+
+              <h2 class="menu-text"> Dossiers récent</h2>
+            </ion-card>
+          </ion-col>
+          <ion-col col-6>
+            <ion-card text-center padding class="box" (click)="goTo('/favfolder')">
+              <div _ngcontent-rvl-c121="" class="cadre">
+              <span class="ml-1 mr-3" style="font-size: xx-large; color: #f1a402;">
+
+                <i class="fas fa-star"></i>
+         </span>
+        </div>
+              <h2 class="menu-text">Dossiers Favoris</h2>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <ion-card text-center padding  class="box" (click)="goTo('/Rechfreq')">
+              <div _ngcontent-rvl-c121="" class="cadre">
+              <span class="ml-1 mr-3" style="    font-size: xx-large; color:#f7570c ;">
+                <!-- <span class="ml-1 mr-3" style="font-size: 1.3em; color: #364671;"> -->
+              <i class="fas fa-fire-alt"></i>
+        </span>
+      </div>
+              <h2 class="menu-text">Recherche fréquente</h2>
+            </ion-card>
+          </ion-col>
+          <ion-col col-6>
+            <ion-card text-center padding class="box"  (click)="goTo('/RechercheAvancee')">
+              <div _ngcontent-rvl-c121="" class="cadre">
+              <span class="ml-1 mr-3" style="  font-size: xx-large;color:#3dc2ff ;">               
+              <i class="fas fa-search"></i>
+         </span>
+        </div>
+              <h2 class="menu-text">Recherche Avancée</h2>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <!-- 
+        <ion-row *ngIf="show" >
+          <ion-col col-6 >
+            <ion-card   text-center padding class="box"  (click)="goTo('/documentSearch')">
+              <div _ngcontent-rvl-c121="" class="cadre">
+              <span class="fa-stack m-0 my-auto" style="margin-bottom: 7px;">
+                <i class="fas fa-file fa-stack-2x"  style="font-size: 2.5em; color: white;"></i>
+                <i class="fa fa-search fa-inverse fa-stack-1x" style="font-size: 1em; margin-top:6px;color: #1c32ad;"></i>
+              </span>
+            </div>
+              <h2 class="menu-text">Recherche Document</h2>
+            </ion-card>
+          </ion-col>
+          <ion-col col-6>
+            <ion-card text-center padding  class="box" >
+              <div _ngcontent-rvl-c121="" class="cadre">
+                <span class="fa-stack m-0 my-auto" style="font-weight: 500;margin-bottom: 10px;">
+                    <i class="fas fa-folder fa-stack-2x" style="font-size: 2.5em; color: white;"></i>
+                    <i class="fa fa-search fa-inverse fa-stack-1x"style="font-size: 1em; margin-top:6px ;color: #1c32ad;"></i>
+                  </span>
+                </div>
+              <h2 class="menu-text">Recherche dossier</h2>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+       -->
+      </ion-grid>
+    </div>
+      <!-- <app-dashboard></app-dashboard> -->
+  </ion-content>
+ 
+
+</ion-app>
+
+
+

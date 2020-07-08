@@ -1,0 +1,71 @@
+
+<ion-app>
+   <ion-header translucent="true" class="f1" >
+     <ion-toolbar  style="display: flex;justify-content: center;flex-direction: row;background-color: #F4F5F7!Important">
+      
+         <div style="padding-top: 20px;padding-bottom: 20px; display: flex;align-items: center;flex-direction: row;   height: 59px;justify-content: center; margin-right: 44px;">
+           <div>
+           <ion-icon name="chevron-back" style="color:#192a56;font-size: 25px;     margin-top: 7px; padding-right: 100px;" (click)="goTo('/documentSearch')"></ion-icon></div>
+           <ion-icon name="eye" style="color: #192a56; font-size: 30Px; margin-top: 5px;"></ion-icon>
+           <h1 class="title" style="color: #192a56; height: 3px;margin-top: 0; margin-left: 2px; margin-bottom: 19px;     margin-right: 70px;  font-size: 21px;"  >Visualiser</h1>
+         </div>
+     </ion-toolbar>
+     
+   </ion-header>
+   <ion-content  fullscreen="true"  style="--background: url('./assets/icon/bg.jpg')  no-repeat center/cover fixed;overflow:auto;"  >
+<!--div class="card-header d-flex" >
+   <h5 class="h5 midnight-blue my-0 py-0" style="font-weight: 700!important;">Visualiser</h5>
+   <a class="mr-1 ml-auto" ><span> <i class="fa fa-times" aria-hidden="true"></i> </span></a>
+</div-->
+<!--div class="header-separator bg-primary">
+   <div class="header-separator bg-warning" style="width: 20%;"></div>
+   </div!-->
+<div class="card-body p-0">
+ 
+   <!-- <ng-template #DocViewer> -->
+      <iframe [hidden]="fileType=='image'" *ngIf="!isLoading" [src]="uri" frameborder="0" class="m-0" width="100%" height="650px"></iframe>
+   <!-- </ng-template> -->
+   <!-- <ng-template  #ImageViewer> -->
+      <div [hidden]="fileType!=='image'" class="container-fluid my-3"  width="100%" height="650px">
+        
+         <div class="row px-0">
+            <div class="col-1 navigation-btn-wrapper">
+                <button (click)="PreviousPage()" class="btn btn-lg" [hidden]="page==0">
+                   <span> <i class="fas fa-angle-left"></i></span>
+                </button>
+            </div>
+            <div class="col-10 px-0">
+                <div class="container-fluid">
+                    <div class="row p-auto"  width="100%" >
+                     <div class="col-12 d-flex justify-content-center">
+                        <div class="displayedItem" id="ImageView">
+
+                        </div>
+                    </div>
+                     
+                   </div>
+                </div>
+            </div>
+            <div class="col-1 navigation-btn-wrapper">
+               <button (click)="NextPage()" class="btn btn-lg" [hidden]="page==(tiffPages-1)">
+                  <span> <i class="fas fa-angle-right"></i></span>
+               </button>
+           </div>
+         </div>
+      </div>
+   <!-- </ng-template> -->
+    
+  
+</div>
+<div style="padding-left: 240px;margin-top: 8px;height: 40px;">
+       
+                  
+   <ion-button style=" overflow-x: hidden; font-family: 'Nunito'; width: 125px;height: 26px;" color="primary" expand="block" (click)="onDownload()" >
+      Télécharger
+  </ion-button>
+
+ 
+</div>
+
+   </ion-content>
+</ion-app>

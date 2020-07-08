@@ -1,0 +1,83 @@
+<ion-app>
+  <ion-header translucent="true" class="h1" >
+    <ion-toolbar  style="display: flex;justify-content: center;flex-direction: row;background-color: #F4F5F7!Important">
+     
+        <div style="padding-top: 20px;padding-bottom: 20px; display: flex;align-items: center;flex-direction: row;   height: 59px;justify-content: center; margin-right: 44px;">
+          <div>
+          <ion-icon name="chevron-back" style="color:#192a56;font-size: 25px;     margin-top: 7px; padding-right: 30px;" (click)="goTo('/Acceuil')"></ion-icon></div>
+          <ion-icon name="search" style="color: #192a56; font-size: 30Px; margin-top: 5px;"></ion-icon>
+          <h1 class="title" style="color: #192a56; height: 3px;margin-top: 0; margin-left: 2px; margin-bottom: 19px;     margin-right: 20px;  font-size: 21px;"  >Recherche Avancée </h1>
+        </div>
+    </ion-toolbar>
+    
+  </ion-header>
+  <ion-content  fullscreen="true"  style="--background: url('./assets/icon/bg.jpg')  no-repeat center/cover fixed;"  >
+    
+    <div  style="display: flex;margin-top: 30px;flex-direction: row;height: 100%;">
+     
+      <ion-grid style="width:100%">
+        
+        <!-- -->
+        
+          <ion-row style="margin-top: 130px;">
+            <ion-col col-6 >
+              <ion-card   text-center padding class="box2"  (click)="goTo('/documentSearch/')">
+                <div _ngcontent-rvl-c121="" class="cadre2">
+                <span class="fa-stack m-0 my-auto" style="margin-bottom: 7px;">
+                  <ion-icon name="document-outline" slot="end"   style="font-size: 2.5em;color: #1c32ad; "></ion-icon>
+                  <!--i class="fas fa-file fa-stack-2x"  style="font-size: 2.5em; color: #f3f3c9fa;"></i-->
+                  <i class="fa fa-search fa-inverse fa-stack-1x" style="font-size: 1em; margin-top:7px;color: #1c32ad;"></i>
+                </span>
+              </div>
+                <h2 class="menu-text2">Recherche Document</h2>
+              </ion-card>
+            </ion-col>
+            <ion-col col-6>
+              <ion-card text-center padding  class="box2" (click)="goTo('/foldersearch')">
+                <div _ngcontent-rvl-c121="" class="cadre2">
+                  <span class="fa-stack m-0 my-auto" style="font-weight: 500;margin-bottom: 10px;">
+                      <i class="fas fa-folder fa-stack-2x" style="font-size: 2.5em; color: #ffbd00;"></i>
+                      <i class="fa fa-search fa-inverse fa-stack-1x"style="font-size: 1em; margin-top:6px ; color: #1c32ad"></i>
+                    </span>
+                  </div>
+                <h2 class="menu-text2">Recherche dossier</h2>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+
+        
+           
+            
+        <!--ion-row style="    max-height: 74px;">
+          <ion-col col-6 >
+            <ion-card   text-center padding class="box"  (click)="goTo('/documentSearch')">
+              <div _ngcontent-rvl-c121="" class="cadre">
+              <span class="fa-stack m-0 my-auto" >
+                <i class="fas fa-file fa-stack-2x"  style="font-size: 2em; color: white;"></i>
+                <i class="fa fa-search fa-inverse fa-stack-1x" style="font-size: 1em; margin-top:2px;color: #1c32ad;"></i>
+              </span>
+            </div>
+              <h6 class="menu-text">Recherche document</h6>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <ion-card text-center padding  class="box" >
+              <div _ngcontent-rvl-c121="" class="cadre">
+                <span class="fa-stack m-0 my-auto" >
+                    <i class="fas fa-folder fa-stack-2x" style="font-size: 2em; color: white;"></i>
+                    <i class="fa fa-search fa-inverse fa-stack-1x"style="font-size: 1em; margin-top:1px ;color: #1c32ad;"></i>
+                  </span>
+                </div>
+              <h6 class="menu-text">Recherche dossier</h6>
+            </ion-card>
+          </ion-col>
+        </ion-row-->
+       
+      </ion-grid>
+    </div>
+  </ion-content>
+ 
+  <!-- <app-dashboard></app-dashboard> -->
+</ion-app>
